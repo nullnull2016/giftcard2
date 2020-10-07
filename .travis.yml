@@ -1,2 +1,10 @@
 language: C
+sudo: required
+before_install: 
+ - wget http://lcamtuf.coredump.cx/afl/releases/afl-2.52b.tgz
+ - tar -zxvf afl-2.52b.tgz
+ - cd afl-2.52b
+ - make
+ - sudo make install
+
 script: make
