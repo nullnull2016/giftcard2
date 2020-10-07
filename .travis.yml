@@ -7,4 +7,8 @@ before_install:
  - make
  - sudo make install
 
-script: make
+script: 
+ - make
+ - sudo su
+ - echo core >/proc/sys/kernel/core_pattern
+ - afl-fuzz -i part3/input -o part3/output ./giftcardreader 1 @@
